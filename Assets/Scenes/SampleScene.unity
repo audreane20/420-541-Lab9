@@ -3330,7 +3330,7 @@ MonoBehaviour:
   - {fileID: 1552699396}
   - {fileID: 1830129832}
   Player: {fileID: 2107106902}
-  AttackRange: 2
+  AttackRange: 1
   PlayerLayer:
     serializedVersion: 2
     m_Bits: 8
