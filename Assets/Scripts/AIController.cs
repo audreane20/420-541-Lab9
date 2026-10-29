@@ -36,6 +36,18 @@ public class AIController : MonoBehaviour
         Agent = GetComponent<NavMeshAgent>();
         aiAnimationController = GetComponent<AIAnimationController>();
 
+        // Use the same humanoid hands that the visible Animator actually moves.
+        Animator characterAnimator = GetComponent<Animator>();
+        if (characterAnimator != null && characterAnimator.isHuman)
+        {
+            Transform leftHand = characterAnimator.GetBoneTransform(HumanBodyBones.LeftHand);
+            Transform rightHand = characterAnimator.GetBoneTransform(HumanBodyBones.RightHand);
+            if (leftHand != null)
+                leftHandTransform = leftHand;
+            if (rightHand != null)
+                rightHandTransform = rightHand;
+        }
+
         StateMachine = new StateMachine();
 
         StateMachine.AddState(new IdleState(this));
@@ -104,6 +116,9 @@ public class AIController : MonoBehaviour
 
         foreach (Transform hand in handTransforms)
         {
+            if (hand == null)
+                continue;
+
             // Overlap check — sphere or capsule works well for melee hitboxes
             Collider[] hits = Physics.OverlapSphere(hand.position, 0.5f, PlayerLayer);
 
