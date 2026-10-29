@@ -3243,6 +3243,7 @@ GameObject:
   - component: {fileID: 2114487926}
   - component: {fileID: 2114487928}
   - component: {fileID: 2114487927}
+  - component: {fileID: 2114487929}
   m_Layer: 6
   m_Name: Zombie
   m_TagString: Enemy
@@ -3381,6 +3382,37 @@ NavMeshAgent:
   m_BaseOffset: 1
   m_WalkableMask: 4294967295
   m_ObstacleAvoidanceType: 4
+--- !u!114 &2114487929
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2114487918}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7f2e7bc94f30dae41b468cb2f71b8876, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::AIController
+  Waypoints: []
+  Player: {fileID: 0}
+  AttackRange: 1
+  PlayerLayer:
+    serializedVersion: 2
+    m_Bits: 0
+  currentState: 0
+  leftHandTransform: {fileID: 0}
+  rightHandTransform: {fileID: 0}
+  viewDistance: 10
+  viewAngle: 90
+  eyeHeight: 1.6
+  obstacleMask:
+    serializedVersion: 2
+    m_Bits: 0
+  playerMask:
+    serializedVersion: 2
+    m_Bits: 0
+  visionPersistence: 0.5
 --- !u!1001 &6489749920732949425
 PrefabInstance:
   m_ObjectHideFlags: 0
